@@ -1,0 +1,135 @@
+﻿DROP TABLE IF EXISTS Marks;
+CREATE TABLE Marks
+(
+     CourseCode VARCHAR(10) NOT NULL REFERENCES Courses(CourseCode),
+     id INT NOT NULL REFERENCES students(id),
+     Result SMALLINT NOT NULL DEFAULT 0,
+	 PRIMARY KEY (CourseCode, id, Result)
+);
+ALTER TABLE Marks OWNER TO webd4201_admin;
+
+INSERT INTO Marks(CourseCode, Id, Result) VALUES ('COMM3201', 100589028, 75);
+INSERT INTO Marks(CourseCode, Id, Result) VALUES ('DBAS1201', 100589028, 83);
+INSERT INTO Marks(CourseCode, Id, Result) VALUES ('MATH1100', 100589028, 58);
+INSERT INTO Marks(CourseCode, Id, Result) VALUES ('PROG2201', 100589028, 74);
+INSERT INTO Marks(CourseCode, Id, Result) VALUES ('DCOM1100', 100589028, 68);
+
+INSERT INTO Marks(CourseCode, Id, Result) VALUES ('COPS1104', 100589028, 61);
+INSERT INTO Marks(CourseCode, Id, Result) VALUES ('CSYS1122', 100589028, 72);
+INSERT INTO Marks(CourseCode, Id, Result) VALUES ('WEBD2201', 100589028, 83);
+INSERT INTO Marks(CourseCode, Id, Result) VALUES ('OOP2200', 100589028, 94);
+INSERT INTO Marks(CourseCode, Id, Result) VALUES ('SYDE2203', 100589028, 85);
+INSERT INTO Marks(CourseCode, Id, Result) VALUES ('NETD2202', 100589028, 76);
+
+INSERT INTO Marks(CourseCode, Id, Result) VALUES ('COMM4201', 100589028, 71);
+INSERT INTO Marks(CourseCode, Id, Result) VALUES ('NETD3202', 100589028, 72);
+INSERT INTO Marks(CourseCode, Id, Result) VALUES ('OOP3200', 100589028, 82);
+INSERT INTO Marks(CourseCode, Id, Result) VALUES ('SYDE3203', 100589028, 81);
+INSERT INTO Marks(CourseCode, Id, Result) VALUES ('SYSA3204', 100589028, 87);
+INSERT INTO Marks(CourseCode, Id, Result) VALUES ('WEDE3201', 100589028, 87);
+
+INSERT INTO Marks(CourseCode, Id, Result) VALUES ('DBAS5206', 100589028, 61);
+INSERT INTO Marks(CourseCode, Id, Result) VALUES ('MAFD4202', 100589028, 67);
+INSERT INTO Marks(CourseCode, Id, Result) VALUES ('MODE4201', 100589028, 71);
+INSERT INTO Marks(CourseCode, Id, Result) VALUES ('OOP4200', 100589028, 82);
+INSERT INTO Marks(CourseCode, Id, Result) VALUES ('WEDJ4203', 100589028, 87);
+
+INSERT INTO Marks(CourseCode, Id, Result) VALUES ('DBAS6206', 100589028, 60);
+INSERT INTO Marks(CourseCode, Id, Result) VALUES ('ITBU5200', 100589028, 63);
+INSERT INTO Marks(CourseCode, Id, Result) VALUES ('MAFD5202', 100589028, 72);
+INSERT INTO Marks(CourseCode, Id, Result) VALUES ('SYDE5203', 100589028, 78);
+INSERT INTO Marks(CourseCode, Id, Result) VALUES ('WEBF5201', 100589028, 76);
+
+INSERT INTO Marks(CourseCode, Id, Result) VALUES ('CAPR6203', 100589028, 75);
+INSERT INTO Marks(CourseCode, Id, Result) VALUES ('FWKI6203', 100589028, 60);
+INSERT INTO Marks(CourseCode, Id, Result) VALUES ('FWKI6204', 100589028, 70);
+INSERT INTO Marks(CourseCode, Id, Result) VALUES ('ITBU6200', 100589028, 73);
+INSERT INTO Marks(CourseCode, Id, Result) VALUES ('MAFD5202', 100589028, 63);
+INSERT INTO Marks(CourseCode, Id, Result) VALUES ('TECH6200', 100589028, 85);
+INSERT INTO Marks(CourseCode, Id, Result) VALUES ('WEBC6201', 100589028, 79);
+
+INSERT INTO Marks(CourseCode, Id, Result) VALUES ('COMM3201', 100222222, 85);
+INSERT INTO Marks(CourseCode, Id, Result) VALUES ('DBAS1201', 100222222, 63);
+INSERT INTO Marks(CourseCode, Id, Result) VALUES ('MATH1100', 100222222, 88);
+INSERT INTO Marks(CourseCode, Id, Result) VALUES ('PROG2201', 100222222, 77);
+INSERT INTO Marks(CourseCode, Id, Result) VALUES ('DCOM1100', 100222222, 61);
+
+INSERT INTO Marks(CourseCode, Id, Result) VALUES ('COPS1104', 100222222, 74);
+INSERT INTO Marks(CourseCode, Id, Result) VALUES ('CSYS1122', 100222222, 79);
+INSERT INTO Marks(CourseCode, Id, Result) VALUES ('WEBD2201', 100222222, 84);
+INSERT INTO Marks(CourseCode, Id, Result) VALUES ('OOP2200', 100222222, 89);
+INSERT INTO Marks(CourseCode, Id, Result) VALUES ('VIRT2200', 100222222, 94);
+INSERT INTO Marks(CourseCode, Id, Result) VALUES ('DCOM2100', 100222222, 66);
+
+
+
+--Show content
+SELECT * FROM Marks;
+
+--Table join with Courses table
+SELECT Marks.Id, Courses.CourseCode, CourseTitle, Result FROM Courses, Marks WHERE Courses.CourseCode = Marks.CourseCode;
+/*
+INSERT INTO Marks(CourseCode, Id, Result) VALUES (,100589028, XX);
+INSERT INTO Marks(CourseCode, Id, Result) VALUES (,100589028, XX);
+INSERT INTO Marks(CourseCode, Id, Result) VALUES (,100589028, XX);
+INSERT INTO Marks(CourseCode, Id, Result) VALUES (,100589028, XX);
+INSERT INTO Marks(CourseCode, Id, Result) VALUES (,100589028, XX);
+INSERT INTO Marks(CourseCode, Id, Result) VALUES (,100589028, XX);
+INSERT INTO Marks(CourseCode, Id, Result) VALUES (,100589028, XX);
+INSERT INTO Marks(CourseCode, Id, Result) VALUES (,100589028, XX);
+INSERT INTO Marks(CourseCode, Id, Result) VALUES (,100589028, XX);
+INSERT INTO Marks(CourseCode, Id, Result) VALUES (,100589028, XX);
+INSERT INTO Marks(CourseCode, Id, Result) VALUES (,100589028, XX);
+INSERT INTO Marks(CourseCode, Id, Result) VALUES (,100589028, XX);
+INSERT INTO Marks(CourseCode, Id, Result) VALUES (,100589028, XX);
+INSERT INTO Marks(CourseCode, Id, Result) VALUES (,100589028, XX);
+
+*/
+
+/*
+
+'COMM4201'
+'NETD3202'
+'OOP3200'
+'SYDE3203'
+'SYSA3204'
+'WEBD3201'
+'DBAS5206'
+'MAFD4202'
+'MODE4201'
+'OOP4200'
+'WEBD4203'
+'DBAS6206'
+'ITBU5200'
+'MAFD5202'
+'SYDE5203'
+'WEBF5201'
+'CAPR6203'
+'FWKI6203'
+'FWKI6204'
+'ITBU6200'
+'MAFD6202'
+'TECH6200'
+'WEBC6201'
+'CSYS2122'
+'DCOM3100'
+'NETW4102'
+'PROG3103'
+'PROJ6101'
+'CLNT1100'
+'DCOM4100'
+'NETW5100'
+'PROG4103'
+'CLNT1101'
+'DCOM5100'
+'NETW6100'
+'FWKC5101'
+'SECR1100'
+'CLNT2101'
+'FWKC6101'
+'NETW7100'
+'NETW8100'
+'VOIP2100'
+
+*/
+
